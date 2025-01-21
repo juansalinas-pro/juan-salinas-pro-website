@@ -1,0 +1,87 @@
+---
+const testimonials = [
+  {
+    name: 'Diego Abdala',
+    role: 'Software Engineer, Lear Soft',
+    image: '/avatars/diego-abdala.png?height=100&width=100',
+    content: 'Trabajé tres años con Juan. Es un empleado muy aplicado y metódico. Se interesa en aprender y poner en practica nuevas metodologías buscando la que más se adapte a las necesidades de la empresa. Busca de manera continua crecer a nivel tecnológico a pesar de ya contar con un conocimiento muy avanzado. Es solidario con sus compañeros, compartiendo constantemente información, soluciones y buenas practicas que mejoran la capacidad de todo el equipo. Aplica a la perfección los ideales y valores de la empresa. Es muy respetuoso con los horarios, tiempos de entrega, trato con el cliente, y sobre todo con la calidad del producto entregado. Se adapta fácilmente a cambios de proyecto, tecnología y equipos. Además, muy buena aptitud como líder.',
+    rating: 5,
+  },
+  {
+    name: 'Sam Andreatta',
+    role: 'Software Engineer, Lear Soft',
+    image: '/avatars/sam-andreatta.jpeg?height=100&width=100',
+    content: 'Juan fue el líder de mi equipo en una de mis primeras experiencias laborales, y hasta el día de hoy me sirve de ejemplo de buen programador y profesional. Es muy serio y responsable, comprometido con el equipo y un experto en Java. Tuvo mucha paciencia cuando yo no sabía casi nada y me enseñó a buscar entender cada problema, dividirlo en partes, y justificar las soluciones posibles. En cada etapa del proyecto nos incentivaba a mantener buenas prácticas y documentación, y a todo el equipo nos daba la motivación para seguir estudiando y ser independientes, lo que considero la característica más importante de un líder.',
+    rating: 5,
+  },
+  {
+    name: 'Andrea Perez',
+    role: 'UX/UI Designer / Design Lead, Buquebus',
+    image: '/avatars/andrea-perez.jpeg?height=100&width=100',
+    content: 'Juan es un excelente profesional, 100% dedicado, enfocado, decidido a aprender siempre un poco más y a transmitir sus conocimientos a las personas que lo rodean. Abierto a nuevos desafíos y proyectos. Es un gran lider, se preocupa por su equipo y por la organización de sus proyectos. Y es sobre todo, una muy buena persona.',
+    rating: 5,
+  },
+  {
+    name: 'Pablo Delgado',
+    role: 'Web Designer, Buquebus',
+    image: '/avatars/pablo-delgado.jpeg?height=100&width=100',
+    content: 'El tiempo que Juan trabajo con nosotros dándonos soporte demostró ser un excelente profesional con una gran capacidad para resolver todo tipo de problemas, siempre con buena predisposición y aportando ideas para facilitar y mejorar nuestras herramientas y sistemas de trabajo.',
+    rating: 5,
+  },
+]
+---
+
+<section class="bg-white dark:bg-gray-800 py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+        Lo que dicen las personas con las que he trabajado
+      </h2>
+      <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">
+        ¡No solo tomes mi palabra - escucha lo que dicen las personas con las que he trabajado!
+      </p>
+    </div>
+    <div class="mt-12 grid gap-8 lg:grid-cols-2">
+      {testimonials.map((testimonial, index) => (
+        <div
+          class="bg-gray-50 dark:bg-gray-700 overflow-hidden shadow-md rounded-lg transition-all duration-300 hover:shadow-lg"
+        >
+          <div class="px-4 py-5 sm:p-6">
+            <div class="flex items-center mb-4">
+              <div class="flex-shrink-0">
+                <img
+                  class="h-12 w-12 rounded-full"
+                  src={testimonial.image}
+                  alt={`Portrait of ${testimonial.name}`}
+                  width={48}
+                  height={48}
+                />
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                  {testimonial.name}
+                </h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                  {testimonial.role}
+                </p>
+              </div>
+            </div>
+            <blockquote class="mt-4 text-gray-600 dark:text-gray-300 italic">
+              {testimonial.content}
+            </blockquote>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="mt-12 flex justify-center">
+      <a
+        href="https://www.linkedin.com/in/juansalinas-pro/details/recommendations/?detailScreenTabIndex=0"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-300"
+      >
+        Ver más
+      </a>
+    </div>
+  </div>
+</section>

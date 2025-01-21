@@ -1,0 +1,38 @@
+---
+import { Github, Twitter, Linkedin, Mail, Rss, Instagram } from 'lucide-astro'
+
+const socialLinks = [
+  { name: 'GitHub', icon: Github, href: 'https://github.com/juansalinas-pro' },
+  { name: 'Twitter', icon: Twitter, href: 'https://x.com/juansalinas_pro' },
+  { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/juansalinas-pro/' },
+  { name: 'Email', icon: Mail, href: 'mailto:juan.salinas.pro@gmail.com' },
+  { name: 'Medium', icon: Rss, href: 'https://blog.juansalinas.pro/' },
+  { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/juansalinas.pro/' },
+]
+---
+
+<footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-center">
+      <a href="/" class="flex items-center justify-center mb-6">
+        <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 transition-colors duration-300">Juan Salinas</span>
+      </a>
+      <p class="text-gray-600 dark:text-gray-400 text-base text-center mb-8 max-w-2xl">
+        Ingeniero de Software apasionado por crear soluciones innovadoras.
+      </p>
+    </div>
+    <div class="flex flex-col items-center">
+      <div class="flex justify-center space-x-6 mb-6">
+        {socialLinks.map((item) => (
+          <a href={item.href} class="text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+            <span class="sr-only">{item.name}</span>
+            <item.icon class="h-6 w-6" aria-hidden="true" />
+          </a>
+        ))}
+      </div>
+      <p class="text-sm text-gray-500 dark:text-gray-400 text-center">
+        © {new Date().getFullYear()} Juan Salinas. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
